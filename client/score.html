@@ -1,0 +1,56 @@
+<head>
+  <title>Score</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+
+<body>
+	{{>navigation}}
+</body>
+
+
+
+<template name= "layout">
+	<div class="container-fluid">
+    <div class="row-fluid">
+       <div class="span4">
+          
+       </div>
+       <div class="span8">
+          {{>yield}}
+       </div>
+    </div>
+	</div>
+</template>
+
+
+<template name= "players">
+  <ul id="playerList" class="unstyled">
+    {{#each playerList}}
+      {{>player}}
+    {{/each}}
+  </ul><br>
+
+  <div class="col-lg-10">
+    <input type="number" class="form-control" id="inputScore">
+    <button type="button" class="btn btn-default" id="inputScoreButton">Give Points!</button>
+    <button type="button" class="btn btn-default" id="resetButton">Reset!</button>
+   </div>
+
+
+</template>
+
+
+<template name= "player">
+  <div class="player {{selected}}">
+    <div class="panel-body">
+            <td class="title">{{name}} : {{score}}</td>
+    </div>
+  </div>
+</template>
+
+<template name= "add_player">
+  <div class="form-group">
+    <label class="control-label" for="inputName">Name</label>
+    <input type="text" class="form-control" id="inputName">
+</div>
+</template>
